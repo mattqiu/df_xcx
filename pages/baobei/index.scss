@@ -1,0 +1,212 @@
+@import '../../arg.scss';
+
+.bb{
+  .input-placeholder{
+    color:#999;
+  }
+  &-ele{
+    height:110rpx;
+    line-height:110rpx;
+    margin:0 40rpx;
+    &.bt{
+      border-top:1rpx solid #eee;
+    }
+  }
+  &-ele1{
+    border-bottom:1rpx solid #E4E4E4;
+  }
+  &-userava{
+    width:70rpx;
+    height:70rpx;
+    &.s0{
+      background:url(#{$domain}120x120.png) 0 0 no-repeat;
+      background-size:100% 100%;
+      margin-right:30rpx;
+    }
+    &.s1{
+      background:url(#{$domain}120x120x.png) 0 0 no-repeat;
+      background-size:100% 100%;
+      margin-right:30rpx;
+    }
+    &.s2{
+      background:url(#{$domain}tel50x50.png) center center no-repeat;
+      background-size:50rpx 50rpx;
+    }
+  }
+  &-addmore{
+    height:110rpx;
+    line-height:110rpx;
+    border:1rpx solid #eee;
+    border-left:0;
+    border-right:0;
+    font-size:32rpx;
+    color:#12213E;
+    background:url(#{$domain}addmore44x44.png) left center no-repeat;
+    background-size:44rpx 44rpx;
+    padding-left:58rpx;
+    margin:0 40rpx;
+  }
+  &-addmoreBlock{
+  }
+  .phone-q{
+    color:#3778FF;
+    font-size:30rpx;
+    margin-right:16rpx;
+    &:after{
+      content:'';
+      width:0;
+      height:0;
+      display:inline-block;
+      border-top:10rpx solid #3778FF;
+      border-left:7rpx solid transparent;
+      border-right:7rpx solid transparent;
+      border-bottom:10rpx solid transparent;
+      vertical-align:top;
+      position:relative;
+      top:52rpx;
+      margin-left:6rpx;
+    }
+  }
+  &-rule{
+    font-size:24rpx;
+    color:#9097A3;
+    margin:0 40rpx;
+    view{
+      display:block;
+      line-height:82rpx;
+      height:82rpx;
+    }
+    radio{
+      transform:scale(0.7);
+    }
+  }
+  &-user{
+    .bb-label{
+      font-size:34rpx;
+      width:auto;
+      color:$c1;
+    }
+    .bb-option{
+      font-size:28rpx;
+      color:$c2;
+      border-bottom:0;
+    }
+  }
+  &-mainele{
+    margin:0 40rpx;
+    background:#f6f6f6;
+    border-radius:8rpx;
+    overflow:hidden;
+    .bb-ele{
+      margin:0 20rpx;
+    }
+  }
+  &-option{
+    border-bottom:1rpx solid #eee;
+    &.noborder{
+      border-bottom:0;
+    }
+    &.hasarrow1{
+      &:after{
+        margin-left:20rpx;
+        content:'';
+        display:inline-block;
+        width:12rpx;
+        height:22rpx;
+        background:url(#{$domain}my-arrow.png) 0 0 no-repeat;
+        background-size:100% 100%;
+      }
+    }
+    &.hasarrow{
+      position:relative;
+      &:after{
+        right:0;
+        top:50%;
+        margin-top:-11rpx;
+        position:absolute;
+        content:'';
+        width:12rpx;
+        height:22rpx;
+        background:url(#{$domain}my-arrow.png) 0 0 no-repeat;
+        background-size:100% 100%;
+      }
+    }
+  }
+  &-note{
+    margin:0 40rpx;
+    border:1rpx solid #eee;
+    border-left:0;
+    border-right:0;
+    .bb-label{
+      margin-top:39rpx;
+      margin-bottom:40rpx;
+      line-height:1;
+    }
+    textarea{
+      height:127rpx;
+      font-size:32rpx;
+    }
+  }
+  &-ele{
+  }
+  &-label{
+    font-size:32rpx;
+    width:190rpx;
+  }
+  &-b1{
+    input{
+      font-size:32rpx;
+      height:110rpx;
+    }
+  }
+  &-switch{
+    width:180rpx;
+    height:60rpx;
+    box-sizing:border-box;
+    border:2rpx solid #3778FF;
+    border-radius:8rpx;
+    overflow:hidden;
+  }
+  &-switchEle{
+    width:50%;
+    height:56rpx;
+    line-height:56rpx;
+    text-align:center;
+    background:#FFF;
+    color:#3778FF;
+    font-size:24rpx;
+    &.ison{
+      background:#3778FF;
+      color:#FFF;
+    }
+  }
+  &-plotadd{
+    padding:0 40rpx;
+    margin-top:60rpx;
+  }
+  &-plotaddTitle{
+    font-size:34rpx;
+    line-height:1;
+    color:$c1;
+  }
+  &-plotaddSelect{
+    font-size:28rpx;
+    color:$c2;
+    &:after{
+      margin-left:20rpx;
+      content:'';
+      display:inline-block;
+      width:12rpx;
+      height:22rpx;
+      background:url(#{$domain}my-arrow.png) 0 0 no-repeat;
+      background-size:100% 100%;
+    }
+  }
+}
+
+.tui-picker-detail{
+  font-size:32rpx;
+  &.placeholder{
+    color:#999;
+  }
+}

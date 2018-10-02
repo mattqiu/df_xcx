@@ -1,0 +1,135 @@
+<view class="bb" wx:if="{{isLoad}}">
+  <form bindsubmit="submitform">
+  <view class="bb-user bb-ele flex flex-main-justify">
+    <view class="bb-label">添加客户信息</view>
+    <navigator class="bb-option hasarrow1" url="/pages/my/manage?from=1" hover-class="none">从客户列表选择</navigator>
+  </view>
+  <view class="bb-userinfo">
+    <view class="bb-mainele">
+      <view class="bb-ele flex flex-cross-center bb-ele1">
+        <view class="flex-box0">
+          <view class="bb-userava s{{form.gender - 1}}"></view>
+        </view>
+        <view class="bb-option flex flex-main-justify flex-box1 flex-cross-center noborder">
+          <view class="bb-b1">
+            <input type="text" placeholder="请输入真实姓名" name="name" value="{{form.name}}"/>
+          </view>
+          <view class="bb-b2">
+            <view class="bb-switch flex">
+              <view class="bb-switchEle {{form.gender == 1 ? 'ison' : ''}}" bindtap="changeGender" data-id="1">男士</view>
+              <view class="bb-switchEle {{form.gender == 2 ? 'ison' : ''}}" bindtap="changeGender" data-id="2">女士</view>
+              <input class="dn" type="text" name="sex" value="{{form.gender}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bb-ele flex flex-cross-center">
+        <view class="flex-box0">
+          <view class="bb-userava s2"></view>
+        </view>
+        <view class="bb-option flex flex-main-justify flex-box1 noborder">
+          <!--view class="bb-b1 flex"><input type="text" value="130" style="width:3em" class="flex-box0"/><span>****</span><input type="text" value="3201" /></view-->
+        <view class="bb-b1 flex"><picker mode="selector" range-key="name" range="{{qs}}" bindchange="changeQs"><view class="phone-q">{{qs[qs_index]['value']}}</view></picker><input type="text" placeholder="请输入客户手机号码" value="{{form.phone}}" name="phone" bindinput="onInputPhone" maxlength="11"/></view>
+          <!--view class="bb-b2">
+            <switch color="#3778FF" bindchange="onChangePhone" checked="{{form.phone_hide}}"></switch>
+          </view-->
+        </view>
+      </view>
+    </view>
+    <view class="bb-rule" wx:if="{{!phoneType}}">
+      <view class="radio" bindtap="setRule">
+        <radio value="1" checked="{{rule}}" color="#3778FF" bindchange="onChangePhone"/>报备客户手机号码全号
+      </view>
+    </view>
+    <view class="bb-addmore" bindtap="showMore" wx:if="{{!isMore}}">添加更多</view>
+    <view class="bb-addmoreBlock" wx:if="{{isMore}}">
+      <view class="bb-ele flex bt">
+        <view class="bb-label">到访时间</view>
+        <view class="bb-option hasarrow flex-box1">
+          <view class="bb-b1">
+            <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+              <view class="tui-picker-detail" wx:if="{{showTime}}">{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}</view>
+              <view class="tui-picker-detail placeholder" wx:if="{{!showTime}}" bindtap="show">请选择到访时间</view>
+              <input class="dn" type="text" name="time" value="{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}"/>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="bb-ele flex">
+        <view class="bb-label">来访人数</view>
+        <view class="bb-option hasarrow flex-box1">
+          <view class="bb-b1">
+            <picker range="{{visit_num_array}}" bindchange="changeVisitNum">
+              <view class="tui-picker-detail placeholder" wx:if="{{!visit_num}}">请选择来访人数</view>
+              <view class="tui-picker-detail" wx:if="{{visit_num}}">{{visit_num}}</view>
+            </picker>
+            <input type="text" class="dn" name="visit_num" value="{{visit_num}}" placeholder="请输入来访人数"/>
+          </view>
+        </view>
+      </view>
+      <view class="bb-ele flex">
+        <view class="bb-label">来访方式</view>
+        <view class="bb-option flex-box1 noborder flex flex-cross-center">
+          <!--view class="bb-b1">
+            <picker range="{{visit_ways}}" bindchange="changeVisit" range-key="name">
+              <view class="tui-picker-detail placeholder" wx:if="{{visit_ways_index == -1}}">请选择来访方式</view>
+              <view class="tui-picker-detail" wx:if="{{visit_ways_index != -1}}">{{visit_ways[visit_ways_index]['name']}}</view>
+              <input type="text" class="dn" name="visit_way" value="{{visit_ways_index}}"/>
+            </picker>
+          </view-->
+          <my-select data="{{visit_ways}}" id="j-visit" name="visit_way"></my-select>
+          <!--view class="my-select">自驾</view><view class="my-select">班车</view-->
+        </view>
+      </view>
+      <view class="bb-textarea bb-note">
+        <view class="bb-label">客户备注</view>
+        <view class="bb-textareaBlock">
+          <textarea placeholder="请输入客户备注" name="note"></textarea>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bb-plotadd">
+    <view class="bb-plotaddHd flex flex-main-justify flex-cross-center">
+      <view class="bb-plotaddTitle">添加楼盘</view>
+      <navigator url="/pages/xinfang/select" hover-class="none" class="bb-plotaddSelect">请选择推荐楼盘</navigator>
+    </view>
+    <input type="text" name="hid" value="{{hid}}" class="dn"/>
+    <xf-plot hid="{{hid}}" wx:if="{{hid.length}}" bind:del="delHid"></xf-plot>
+    <!--view class="bb-plotaddList">
+      <view class="bb-plotaddItem plotaddItem flex flex-main-justify flex-cross-center">
+        <view>
+          <view class="plotaddItem-title">悦珑湾2期（新西塘孔雀城）</view>
+          <view class="plotaddItem-price">10万-30万/佣</view>
+        </view>
+        <view class="plotaddItem-del"></view>
+      </view>
+      <view class="bb-plotaddItem plotaddItem flex flex-main-justify flex-cross-center">
+        <view>
+          <view class="plotaddItem-title">悦珑湾2期（新西塘孔雀城）</view>
+          <view class="plotaddItem-price">10万-30万/佣</view>
+        </view>
+        <view class="plotaddItem-del"></view>
+      </view>
+      <view class="bb-plotaddItem plotaddItem flex flex-main-justify flex-cross-center">
+        <view>
+          <view class="plotaddItem-title">悦珑湾2期（新西塘孔雀城）</view>
+          <view class="plotaddItem-price">10万-30万/佣</view>
+        </view>
+        <view class="plotaddItem-del"></view>
+      </view>
+      <view class="bb-plotaddItem plotaddItem flex flex-main-justify flex-cross-center">
+        <view>
+          <view class="plotaddItem-title">悦珑湾2期（新西塘孔雀城）</view>
+          <view class="plotaddItem-price">10万-30万/佣</view>
+        </view>
+        <view class="plotaddItem-del"></view>
+      </view>
+    </view-->
+  </view>
+  <view class="common-fixbtnplaceholder"></view>
+  <view class="common-fixbtnWrap">
+    <button class="common-fixbtn" form-type="submit">提交</button>
+  </view>
+  </form>
+</view>

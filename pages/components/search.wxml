@@ -1,0 +1,6 @@
+    <view class="search">
+      <view class="search-input">
+        <input type="text" placeholder="{{placeholder}}" bindconfirm="confirm" bindinput="onInput" confirm-type="search" value="{{value}}"/>
+        <view class="search-clear" wx:if="{{showclear}}" bindtap="clear"></view>
+      </view>
+    </view>

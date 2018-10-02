@@ -1,0 +1,3 @@
+page{background:#000}.xfImg-tabs{white-space:nowrap;position:fixed;bottom:40rpx;left:0;right:0}.xfImg-tab{border-radius:8rpx;padding:18rpx 38rpx;color:#fff;font-size:30rpx;line-height:1;display:inline-block;margin:0 10rpx}.xfImg-tab.ison{background:-webkit-linear-gradient(0deg, #73a1ff, #286bf5);background:linear-gradient(90deg, #73a1ff, #286bf5)}
+
+/*# sourceMappingURL=img.wxss.map */

@@ -1,0 +1,78 @@
+page {
+  background: #F8F8F9; }
+
+.city-label {
+  height: 110rpx;
+  font-size: 30rpx;
+  line-height: 110rpx;
+  padding-left: 40rpx;
+  color: #9097A3; }
+.city-gps {
+  background: #FFF;
+  height: 110rpx;
+  line-height: 110rpx; }
+.city-gpsnow {
+  padding-left: 40rpx;
+  font-size: 32rpx;
+  color: #12213E; }
+.city-gpslabel {
+  font-size: 28rpx;
+  color: #9097A3;
+  margin-left: 20rpx; }
+.city-gpsselect {
+  font-size: 28rpx;
+  color: #2F74FB;
+  margin-right: 70rpx; }
+.city-tagList {
+  padding-left: 40rpx; }
+.city-hot {
+  margin-top: -20rpx; }
+.city-tag {
+  width: 152rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  text-align: center;
+  background: #FFF;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  color: #12213E;
+  font-size: 24rpx;
+  margin-bottom: 30rpx; }
+.city-order {
+  position: fixed;
+  right: 0;
+  top: 66rpx;
+  text-align: center; }
+.city-orderItem {
+  font-size: 22rpx;
+  color: #12213E;
+  line-height: 1;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx; }
+
+.cityList-letter {
+  font-size: 30rpx;
+  color: #9097A3;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 40rpx; }
+.cityList-item {
+  height: 110rpx;
+  line-height: 110rpx;
+  background: #FFF;
+  position: relative;
+  font-size: 32rpx;
+  color: #12213E;
+  padding-left: 40rpx; }
+  .cityList-item:after {
+    position: absolute;
+    left: 40rpx;
+    bottom: 0;
+    height: 0px;
+    border-bottom: 1rpx solid #eee;
+    right: 0;
+    content: ''; }
+
+/*# sourceMappingURL=city.wxss.map */

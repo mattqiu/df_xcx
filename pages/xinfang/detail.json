@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText" : "",
+    "usingComponents" : {
+        "xf-item" : "../components/xf-item",
+        "login-dialog" : "../components/login-dialog",
+        "copyright" : "../components/copyright",
+        "jubao" : "../components/jubao",
+        "fav" : "../components/fav",
+        "phone" : "../components/phone"
+    }
+}

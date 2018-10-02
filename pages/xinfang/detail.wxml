@@ -1,0 +1,223 @@
+<import src="../../libs/wxParse/wxParse.wxml"/>
+<view class="xfDetail" wx:if="{{id}}">
+  <view class="xfDetail-banner">
+    <view class="xfDetail-swiper">
+      <swiper bindchange="swiperChange" circular="true">
+        <swiper-item wx:for="{{images}}" wx:key="id" bindtap="previewImage" data-index="{{index}}">
+          <image src="{{item.url}}" class="blockImg"/>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="xfDetail-ns flex">
+      <view class="xfDetail-now">{{current+1}}</view>
+      <view class="xfDetail-nsdiv">/</view>
+      <view class="xfDetail-all">{{images.length}}</view>
+    </view>
+  </view>
+  <!--view class="xfDetail-ad">
+    <image src="../../images/ad.png" class="blockImg"/>
+  </view-->
+  <view class="xfDetail-info wrapper xfInfo">
+    <view class="xfInfo-hd flex flex-main-justify">
+      <view>
+        <view class="xfInfo-title">{{title}}</view>
+        <!--view class="xfInfo-yj">{{pay[0].title}}</view-->
+      </view>
+      <view class="xfInfo-price flex-box0"><span class="xfInfo-priceNo">{{price}}</span><span class="xfInfo-priceUnit">{{unit}}</span></view>
+    </view>
+    <view class="xfInfo-tags flex">
+      <view class="xfInfo-tag t{{index % 3 + 1}}" wx:for="{{tags}}" wx:key="index">{{item}}</view>
+      <!--view class="xfInfo-tag t2">住宅</view>
+      <view class="xfInfo-tag t3">在售</view-->
+    </view>
+    <view class="xfInfo-address flex flex-main-justify" bindtap="showLocation"><span class="flex-box1 xfInfo-addressText">{{address}}</span><span class="xfInfo-distance flex-box0">{{distance}}</span></view>
+    <!--view class="xfInfo-company">{{zd_company}}</view-->
+  </view>
+  <view class="wrapper">
+    <!--view class="xfDetail-baozhang">
+      <view class="xfDetail-baozhang1">真实优选，假一赔百元</view>
+      <view class="xfDetail-baozhang2">真实在售，真实价格，真实图片，房源保障</view>
+    </view-->
+    <view class="xfDetail-dongtai" wx:if="{{new_num}}">
+      <navigator class="xfDetailTitle" url="/pages/xinfang/dongtai?id={{id}}" hover-class="none">
+        <view class="xfDetailTitle-t1">最新动态 ({{new_num}})</view>
+      </navigator>
+      <view class="xfDetail-mdContent">{{news}}</view>
+      <view class="xfDetail-dongtaiTime">{{news_time}}</view>
+    </view>
+    <view class="xfDetail-gz" wx:if="{{pay.length > 0}}">
+      <view class="xfDetailTitle noarrow">
+        <view class="xfDetailTitle-t1">佣金规则</view>
+      </view>
+      <view class="xfDetail-mdContent">
+        <block>
+          {{pay[0].title}}
+        </block>
+        <block>
+          {{pay[0].content}}
+        </block>
+      </view>
+    </view>
+    <view class="xfDetail-dk">
+      <view class="xfDetailTitle noarrow">
+        <view class="xfDetailTitle-t1">带看规则</view>
+      </view>
+      <!--view class="xfDetail-mdContent">苏通园区板块，将打造南通的城市副中心南通纳入大上 海都市圈，苏通园区即是南通对接苏州。</view-->
+      <view class="xfDetail-mdContent"><template is="wxParse" data="{{wxParseData:_dk_rule.nodes}}"/></view>
+    </view>
+    <view class="xfDetail-md">
+      <view class="xfDetailTitle noarrow">
+        <view class="xfDetailTitle-t1">楼盘卖点</view>
+      </view>
+      <view id="j-mdContent" class="xfDetail-mdContent {{limit ? 'limit' : ''}}"><template is="wxParse" data="{{wxParseData:_sell_point.nodes}}"/></view>
+      <view class="xfDetail-moreBtn" wx:if="{{mdContentMore}}" bindtap="toggleAllContent"><i class="icon {{limit ? 'down' : ''}}"></i>{{limit ? '展开' : '收起'}}更多房源信息</view>
+    </view>
+    <view class="xfDetail-hx" wx:if="{{hx.length}}">
+      <view class="xfDetailTitle noarrow">
+        <view class="xfDetailTitle-t1" bindtap="goAreaList">主力户型</view>
+      </view>
+      <view class="xfDetail-hxlist">
+        <scroll-view scroll-x="true">
+          <view class="xfDetailHx" wx:for="{{hx}}" wx:key="id">
+            <view class="xfDetailHx-pic">
+              <image src="{{item.image}}" class="blockImg" bindtap="previewHxImage" data-image="{{item.image}}"/>
+            </view>
+            <view class="xfDetailHx-info">
+              <view class="xfDetailHx-title">{{item.title}}</view>
+              <view class="xfDetailHx-params">{{item.bedroom}}室{{item.livingroom}}厅{{item.bathroom}}卫 {{item.size}}㎡</view>
+            </view>
+          </view>
+          <!--view class="xfDetailHx">
+            <view class="xfDetailHx-pic">
+              <image src="" class="blockImg"/>
+            </view>
+            <view class="xfDetailHx-info">
+              <view class="xfDetailHx-title">梵高星空</view>
+              <view class="xfDetailHx-params">4室1厅2卫 112㎡</view>
+            </view>
+          </view>
+          <view class="xfDetailHx">
+            <view class="xfDetailHx-pic">
+              <image src="" class="blockImg"/>
+            </view>
+            <view class="xfDetailHx-info">
+              <view class="xfDetailHx-title">梵高星空</view>
+              <view class="xfDetailHx-params">4室1厅2卫 112㎡</view>
+            </view>
+          </view>
+          <view class="xfDetailHx">
+            <view class="xfDetailHx-pic">
+              <image src="" class="blockImg"/>
+            </view>
+            <view class="xfDetailHx-info">
+              <view class="xfDetailHx-title">梵高星空</view>
+              <view class="xfDetailHx-params">4室1厅2卫 112㎡</view>
+            </view>
+          </view-->
+        </scroll-view>
+      </view>
+    </view>
+    <view class="xfDetail-relation" wx:if="{{relationList.num}}">
+      <view class="xfDetailTitle">
+        <view class="xfDetailTitle-t1" bindtap="goAreaList">同区域楼盘</view>
+      </view>
+      <view class="relationList">
+        <xf-item wx:for="{{relationList.list}}" wx:key="id" item="{{item}}"></xf-item>
+        <!--
+        <view class="relationItem flex" wx:for="{{relationList}}" wx:key="id">
+          <view class="relationItem-pic flex-box0">
+            <image src="" class="blockImg"/>
+          </view>
+          <view class="relationItem-info flex-box1">
+            <view class="relationItem-title">中安银领国际</view>
+            <view class="relationItem-area">嘉兴区 新昌县</view>
+            <view class="relationItem-yj">10万-30万</view>
+            <view class="relationItem-company">上海星合房产置业有限公司</view>
+            <view class="relationItem-price"><span>5.2</span><span class="unit">万/㎡</span></view>
+            <view class="relationItem-type">写字楼</view>
+          </view>
+        </view>
+        <view class="relationItem flex">
+          <view class="relationItem-pic flex-box0">
+            <image src="../../images/220x170.png" class="blockImg"/>
+          </view>
+          <view class="relationItem-info flex-box1">
+            <view class="relationItem-title">中安银领国际</view>
+            <view class="relationItem-area">嘉兴区 新昌县</view>
+            <view class="relationItem-yj">10万-30万</view>
+            <view class="relationItem-company">上海星合房产置业有限公司</view>
+            <view class="relationItem-price"><span>5.2</span><span class="unit">万/㎡</span></view>
+            <view class="relationItem-type">写字楼</view>
+          </view>
+        </view>
+
+        <view class="relationItem flex">
+          <view class="relationItem-pic flex-box0">
+            <image src="../../images/220x170.png" class="blockImg"/>
+          </view>
+          <view class="relationItem-info flex-box1">
+            <view class="relationItem-title">中安银领国际</view>
+            <view class="relationItem-area">嘉兴区 新昌县</view>
+            <view class="relationItem-yj">10万-30万</view>
+            <view class="relationItem-company">上海星合房产置业有限公司</view>
+            <view class="relationItem-price"><span>5.2</span><span class="unit">万/㎡</span></view>
+            <view class="relationItem-type">写字楼</view>
+          </view>
+        </view>
+        <view class="relationItem flex">
+          <view class="relationItem-pic flex-box0">
+            <image src="../../images/220x170.png" class="blockImg"/>
+          </view>
+          <view class="relationItem-info flex-box1">
+            <view class="relationItem-title">中安银领国际</view>
+            <view class="relationItem-area">嘉兴区 新昌县</view>
+            <view class="relationItem-yj">10万-30万</view>
+            <view class="relationItem-company">上海星合房产置业有限公司</view>
+            <view class="relationItem-price"><span>5.2</span><span class="unit">万/㎡</span></view>
+            <view class="relationItem-type">写字楼</view>
+          </view>
+        </view>
+        -->
+      </view>
+    </view>
+    <view class="xfDetail-jb flex flex-main-justify flex-cross-center">
+      <view>
+        <span class="t1">我要投诉</span><span class="t2">案场/市场人员态度不好？</span>
+      </view>
+      <span class="xfDetail-jblink" bindtap="jubao">点击投诉</span>
+    </view>
+  </view>
+  <copyright></copyright>
+  <view class="common-fixbtnplaceholder"></view>
+  <view class="common-fixbtnWrap flex flex-main-justify wrapper">
+    <view class="common-opts flex flex-box0">
+      <view class="common-opt1 flex-item" bindtap="call">电话</view>
+      <fav class="flex-item" hid="{{id}}" status="{{is_save}}" options="{{options}}"></fav>
+    </view>
+    <view class="common-fixbtn s1" bindtap="qianyue" style="margin-right:20rpx;">在线签约</view>
+    <view class="common-fixbtn" bindtap="goBaobei">快速报备</view>
+  </view>
+</view>
+<jubao id="cjubao" hid="{{id}}"></jubao>
+<login-dialog id="j-login-dialog"></login-dialog>
+<phone id="cphone" data="{{phones}}"></phone>
+<!--
+<view class="{{jubao ? '' : 'dn'}}">
+<view class="backdrop"></view>
+<view class="dialog jubao">
+  <view class="jubao-close" bindtap="hidejubao"></view>
+  <view class="jubao-title">虚假房源举报</view>
+  <view class="jubao-bd">
+    <view class="jubao-item ison">项目已售罄</view>
+    <view class="jubao-item">代理公司已撤销</view>
+    <view class="jubao-item">黑客翘客拖佣金</view>
+    <view class="jubao-item">无法联系对接人</view>
+    <view class="jubao-item">其他</view>
+    <view class="jubao-textarea dn">
+      <textarea name="" cols="30" rows="10" placeholder="请填写举报内容"></textarea>
+    </view>
+  </view>
+  <view class="jubao-ft" bindtap="tijiao">提交</view>
+</view>
+</view>
+-->

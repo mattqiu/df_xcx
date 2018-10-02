@@ -1,0 +1,27 @@
+1. 是否开启身份证接口
+/api/index/getIsOpenSfz
+
+2. 获取投诉建议接口
+/api/plot/getNoteList
+
+3. 报备列表
+/api/user/subList?uid=xx&user_type=xx&type=xx&kw=xx&hid=xx user_type 项目展示系统用0 案场助理传1 市场传2 案场销售传3 type是报备状态 
+{
+    num: 1,
+    name: "所有客户",
+    list: [
+    {
+    	id
+		plot_title
+		firstL 第一行左边文案
+		firstR 第一行右边文案
+		secondL
+		secondR
+		thirdL
+		thirdR
+		isShowCode 1的话右侧图标是小二维码的图标 0的话显示添加跟进小图标（案场市场里面的）
+		type
+		typeWords
+		time 时间
+    }]
+},

@@ -1,0 +1,235 @@
+.indexBanner {
+  position: relative; }
+  .indexBanner-img {
+    width: 750rpx;
+    height: 400rpx; }
+  .indexBanner-imgs {
+    height: 400rpx; }
+  .indexBanner-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 65rpx; }
+  .indexBanner-dot {
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 100%;
+    background: white;
+    margin: 0 8rpx;
+    opacity: .44; }
+    .indexBanner-dot.ison {
+      opacity: 1; }
+
+.indexSearch {
+  width: 670rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: white;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  margin-top: -45rpx;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 11rpx 20rpx 0rpx rgba(0, 0, 0, 0.08); }
+  .indexSearch-area {
+    font-size: 28rpx;
+    color: #12213E;
+    margin-left: 28rpx;
+    background: #FFF; }
+    .indexSearch-area:after {
+      content: '';
+      display: inline-block;
+      width: 10rpx;
+      height: 7rpx;
+      background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/more.png) 0 0 no-repeat;
+      background-size: 100% 100%;
+      margin-left: 10rpx;
+      vertical-align: top;
+      margin-top: 42rpx; }
+  .indexSearch-input {
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular; }
+    .indexSearch-input i {
+      width: 37rpx;
+      height: 90rpx;
+      vertical-align: top;
+      background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/search.png) center center no-repeat;
+      background-size: 37rpx 35rpx;
+      margin-left: 36rpx;
+      margin-right: 18rpx; }
+    .indexSearch-input input {
+      height: 90rpx; }
+
+.indexNav {
+  margin-top: 66rpx; }
+  .indexNav-item {
+    margin-bottom: 40rpx;
+    width: 25%;
+    background-size: 96rpx 96rpx;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-top: 116rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #12213E;
+    line-height: 1; }
+    .indexNav-item.i1 {
+      background-image: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/nav-i1.png); }
+    .indexNav-item.i2 {
+      background-image: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/nav-i2.png); }
+    .indexNav-item.i3 {
+      background-image: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/nav-i3.png); }
+    .indexNav-item.i4 {
+      background-image: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/nav-i4.png); }
+    .indexNav-item.i5 {
+      background-image: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/nav-i5.png); }
+
+.indexTopNews {
+  height: 75rpx;
+  margin: 0rpx 52rpx 0 40rpx;
+  padding-left: 92rpx;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 92rpx 75rpx;
+  pointer-events: none; }
+  .indexTopNews swiper {
+    height: 72rpx; }
+  .indexTopNews-item {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #12213E;
+    margin-left: 20rpx;
+    height: 72rpx;
+    overflow: hidden;
+    margin-top: 2rpx; }
+
+.gtitle-text {
+  color: #12213E;
+  font-size: 38rpx;
+  height: 78rpx;
+  line-height: 1;
+  font-weight: bold; }
+.gtitle-link {
+  font-size: 28rpx;
+  color: #9097A3;
+  line-height: 38rpx; }
+  .gtitle-link:after {
+    content: '';
+    width: 12rpx;
+    height: 21rpx;
+    display: inline-block;
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/rarrow.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    vertical-align: top;
+    position: relative;
+    top: 9rpx;
+    margin-left: 16rpx; }
+
+.recommandHouse {
+  margin-top: 50rpx; }
+
+.rhouse-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 110rpx;
+  height: 38rpx;
+  background: linear-gradient(137.7deg, #6a9bff, #2f70f6);
+  border-radius: 8rpx 0rpx 8rpx 0rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 38rpx;
+  color: #fff; }
+.rhouse-img {
+  position: relative;
+  height: 260rpx; }
+.rhouse-info {
+  padding-top: 30rpx; }
+.rhouse-sinfo {
+  text-align: right; }
+.rhouse-title {
+  font-size: 32rpx;
+  color: #12213E;
+  line-height: 1;
+  margin-bottom: 22rpx; }
+.rhouse-comp {
+  color: #9097A3;
+  font-size: 26rpx;
+  line-height: 1; }
+.rhouse-money {
+  color: #FF601B;
+  font-size: 38rpx;
+  margin-bottom: 22rpx;
+  line-height: 1;
+  margin-top: -6rpx;
+  font-family: 'DINMittelschriftLT'; }
+.rhouse-unit {
+  font-size: 24rpx; }
+.rhouse-label {
+  text-align: right;
+  line-height: 1;
+  font-size: 26rpx;
+  color: #9097A3; }
+
+.rhouse2 {
+  width: 322rpx; }
+  .rhouse2-list {
+    margin-top: 30rpx; }
+  .rhouse2-sub {
+    height: 34rpx; }
+  .rhouse2-onelist {
+    margin-top: 0;
+    white-space: nowrap; }
+    .rhouse2-onelist .rhouse2 {
+      display: inline-block;
+      margin-right: 26rpx; }
+      .rhouse2-onelist .rhouse2:first-child {
+        margin-left: 40rpx; }
+  .rhouse2-tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110rpx;
+    height: 38rpx;
+    background: linear-gradient(137.7deg, #6a9bff, #2f70f6);
+    border-radius: 8rpx 0rpx 8rpx 0rpx;
+    font-size: 22rpx;
+    text-align: center;
+    line-height: 38rpx;
+    color: #fff; }
+  .rhouse2-pic {
+    position: relative;
+    width: 322rpx;
+    height: 210rpx;
+    border-radius: 8rpx;
+    overflow: hidden; }
+  .rhouse2-title {
+    color: #12213E;
+    font-size: 32rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    margin-top: 26rpx;
+    margin-bottom: 18rpx; }
+  .rhouse2-label {
+    color: #9097A3;
+    font-size: 26rpx; }
+  .rhouse2-money {
+    color: #FF601B;
+    font-size: 38rpx;
+    margin-bottom: 22rpx;
+    line-height: 1;
+    font-family: 'DINMittelschriftLT'; }
+  .rhouse2-unit {
+    font-size: 24rpx; }
+
+.recomShort {
+  overflow: hidden; }
+  .recomShort .inner {
+    margin-right: -20rpx; }
+  .recomShort .rhouse2 {
+    float: left;
+    margin-bottom: 30rpx;
+    margin-right: 20rpx; }
+
+/*# sourceMappingURL=index.wxss.map */

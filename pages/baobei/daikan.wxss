@@ -1,0 +1,26 @@
+.daikanInfo-label {
+  width: 210rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #12213E; }
+.daikanInfo-text {
+  font-size: 30rpx;
+  color: #12213E; }
+.daikanInfo-link {
+  color: #2F74FB;
+  text-decoration: underline;
+  margin-left: 20rpx; }
+.daikanInfo .em2 {
+  display: inline-block;
+  width: 2em; }
+.daikanInfo-status {
+  font-size: 24rpx;
+  color: #FF601B;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  background: #FDE7E0;
+  display: inline-block; }
+
+/*# sourceMappingURL=daikan.wxss.map */

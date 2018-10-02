@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/company",
+    "pages/index/city",
+    "pages/baobei/detail",
+    "pages/baobei/order",
+    "pages/baobei/daikan",
+    "pages/baobei/genjin",
+    "pages/baobei/index",
+    "pages/xinfang/dongtai",
+    "pages/xinfang/select",
+    "pages/xinfang/img",
+    "pages/xinfang/detail",
+    "pages/xinfang/list",
+    "pages/login/bind",
+    "pages/login/apply",
+    "pages/login/applymd",
+    "pages/login/dialog",
+    "pages/login/reg",
+    "pages/my/index",
+    "pages/my/manage",
+    "pages/my/baobei",
+    "pages/my/fav",
+    "pages/logs/logs",
+    "pages/anchang/index",
+    "pages/anchang/order",
+    "pages/anchang/baobei",
+    "pages/anchang/genjin",
+    "pages/anchang/list",
+    "pages/anchang/bindcomp",
+    "pages/test/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#888E99",
+    "selectedColor" : "#2F74FB",
+    "backgroundColor" : "#FFFFFF",
+    "list":[{
+        "pagePath" : "pages/index/index",
+        "iconPath" : "./images/tabbar-i1.png",
+        "selectedIconPath" : "./images/tabbar-i1-on.png",
+        "text" : "首页"
+    },{
+        "pagePath" : "pages/xinfang/list",
+        "iconPath" : "./images/tabbar-i2.png",
+        "selectedIconPath" : "./images/tabbar-i2-on.png",
+        "text" : "新房"
+    },{
+        "pagePath" : "pages/my/index",
+        "iconPath" : "./images/tabbar-i4.png",
+        "selectedIconPath" : "./images/tabbar-i4-on.png",
+        "text" : "我的"
+    }]
+  }
+
+}

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText" : "报备客户",
+    "usingComponents" : {
+      "xf-plot" : "../components/xf-plot",
+      "my-select" : "../components/select"
+    }
+}

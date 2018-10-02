@@ -1,0 +1,23 @@
+<view class="{{show ? '' : 'dn'}}">
+<view class="jubao-backdrop"></view>
+<view class="dialog jubao">
+  <view class="jubao-close" bindtap="hide"></view>
+  <view class="jubao-title">对接人列表</view>
+  <view class="phonePerson-bd">
+    <view class="phonePerson flex flex-main-justify" wx:for="{{data}}" wx:key="*this">
+      <view class="phonePerson-b1 flex-box1 flex flex-cross-center">
+        <view class="phonePerson-ava">
+          <image class="blockImg" src="../../images/84x84.png"></image>
+        </view>
+        <view class="phonePerson-info">
+          <view class="phonePerson-name">{{item.name}}</view>
+          <view class="phonePerson-address">{{item.company}}</view>
+        </view>
+      </view>
+      <view class="phonePerson-options flex-box0">
+        <view class="tel phonePerson-option" bindtap="call" data-item="{{item}}"></view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>

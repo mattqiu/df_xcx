@@ -1,0 +1,67 @@
+<scroll-view scroll-y="true" scroll-top="{{scrollY}}" style="height:{{wh}}px">
+<view class="city">
+  <view class="city-label">当前定位</view>
+  <view class="city-gps flex flex-main-justify" bindtap="goback">
+    <view class="flex">
+      <view class="city-gpsnow">{{cityName}}</view>
+      <!--view class="city-gpslabel">GPS定位</view-->
+    </view>
+    <!--view class="city-gpsselect">重新定位</view-->
+  </view>
+  <!--view class="city-history">
+    <view class="city-label">历史记录</view>
+    <view class="city-tagList">
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+    </view>
+    <view class="city-label city-hot">热门城市</view>
+    <view class="city-tagList">
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+      <view class="city-tag">北京</view>
+    </view>
+  </view-->
+  <view class="cityList">
+    <view class="cityList-block" wx:for="{{city}}" wx:key="index" data-index="{{index}}">
+      <view class="cityList-letter">{{index}}</view>
+      <view class="cityList-items" wx:for="{{item}}" wx:key="id" wx:for-item="v" data-index="{{v}}" bindtap="setArea">
+        <view class="cityList-item">{{v.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="city-order" catchtouchmove="move" id="j-city-order">
+    <view class="city-orderItem">热</view>
+    <view class="city-orderItem">A</view>
+    <view class="city-orderItem">B</view>
+    <view class="city-orderItem">C</view>
+    <view class="city-orderItem">D</view>
+    <view class="city-orderItem">E</view>
+    <view class="city-orderItem">F</view>
+    <view class="city-orderItem">G</view>
+    <view class="city-orderItem">H</view>
+    <view class="city-orderItem">I</view>
+    <view class="city-orderItem">J</view>
+    <view class="city-orderItem">K</view>
+    <view class="city-orderItem">L</view>
+    <view class="city-orderItem">M</view>
+    <view class="city-orderItem">N</view>
+    <view class="city-orderItem">O</view>
+    <view class="city-orderItem">P</view>
+    <view class="city-orderItem">Q</view>
+    <view class="city-orderItem">R</view>
+    <view class="city-orderItem">S</view>
+    <view class="city-orderItem">T</view>
+    <view class="city-orderItem">U</view>
+    <view class="city-orderItem">V</view>
+    <view class="city-orderItem">W</view>
+    <view class="city-orderItem">X</view>
+    <view class="city-orderItem">Y</view>
+    <view class="city-orderItem">Z</view>
+  </view>
+</view>
+</scroll-view>

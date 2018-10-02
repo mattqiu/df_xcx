@@ -1,0 +1,140 @@
+<!--wux-refresher id="wux-refresher" bind:pulling="onPulling" bind:refresh="onRefresh" distance="50"-->
+  <view class="index" wx:if="{{isLoad}}">
+    <view class="indexBanner">
+      <swiper class="indexBanner-imgs" bindchange="onSwiperChange" circular="true" interval="6e3" autoplay="true">
+          <swiper-item class="indexBanner-img" wx:for="{{indexImgs}}" wx:key="index">
+            <image src="{{item}}" class="blockImg" />
+          </swiper-item>
+      </swiper>
+      <view class="indexBanner-dots flex flex-main-center" wx:if="{{indexImgs.length > 1}}" wx:key="index">
+        <view class="indexBanner-dot flex-item {{current == index ? 'ison' : ''}}" wx:for="{{indexImgs}}"></view>
+        <!--view class="indexBanner-dot ison flex-item"></view>
+        <view class="indexBanner-dot flex-item"></view>
+        <view class="indexBanner-dot flex-item"></view-->
+      </view>
+    </view>
+    <form>
+    <view class="indexSearch flex">
+      <!--navigator class="indexSearch-area flex-box0" url="/pages/index/city?cityName={{cityName}}">{{cityName}}</navigator-->
+      <view class="indexSearch-input flex-box1 flex"><i class="flex-box0"></i><input class="flex-box1" type="text" placeholder="搜索项目名称" bindconfirm="search"/></view>
+    </view>
+    </form>
+    <view class="indexNav flex">
+      <view class="indexNav-item flex-box0" wx:for="{{tags}}" wx:key="index" bindtap="link" data-url="{{item.url}}" hover-class="none" style="background-image:url({{item.image}})">{{item.name}}</view>
+      <!--view class="indexNav-item i2">租房</view>
+      <view class="indexNav-item i3">地宫</view>
+      <view class="indexNav-item i4">海外</view>
+      <view class="indexNav-item i5">发布</view-->
+    </view>
+    <view class="indexTopNews" style="background-image:url({{topNewsImage}})">
+      <swiper vertical="true" autoplay="true" interval="3000" circular="true">
+        <swiper-item wx:for="{{topNewsList}}" wx:key="*index">
+          <!--view class="indexTopNews-item">恭喜武汉分公司成功开启正运营了，活动运营正 式开启，小伙伴们赶快报名吧活动满减？</view-->
+          <view class="indexTopNews-item flex flex-cross-center">{{item}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="recommandHouse wrapper">
+      <view class="gtitle"><view class="gtitle-text">推荐房源</view></view>
+      <navigator url="/pages/xinfang/detail?id={{item.id}}" hover-class="none" wx:for="{{recomLong}}" wx:key="id">
+        <view class="recommandHouse-item rhouse">
+        <view class="rhouse-img">
+          <view class="rhouse-tag" wx:if="{{item.sort}}">{{item.sort}}</view>
+          <image src="{{item.image}}" class="blockImg"/>
+        </view>
+        <view class="rhouse-info flex flex-main-justify">
+          <view class="rhosue-minfo">
+            <view class="rhouse-title">{{item.title}}</view>
+            <view class="rhouse-comp">{{item.addr}}</view>
+          </view>
+          <view class="rhosue-sinfo flex-box0">
+            <view class="rhouse-money">{{item.price}}<!--span class="rhouse-unit">万</span--></view>
+            <view class="rhouse-label">{{item.words}}</view>
+          </view>
+        </view>
+      </view>
+      </navigator>
+      <view class="rhouse2-list recomShort">
+        <view class="inner">
+          <view class="rhouse2" wx:for="{{recomShort}}" wx:key="id">
+            <navigator url="/pages/xinfang/detail?id={{item.id}}" hover-class="none">
+            <view class="rhouse2-pic">
+              <view class="rhouse-tag" wx:if="{{item.sort}}">{{item.sort}}</view>
+              <image src="{{item.image}}" class="blockImg"/>
+            </view>
+            <view class="rhouse2-info">
+              <view class="rhouse2-title">{{item.title}}</view>
+              <view class="rhouse2-sub flex flex-main-justify">
+                <view class="rhouse2-label">{{item.words}}</view>
+                <view class="rhouse2-money">{{item.price}}<!--span class="rhouse2-unit">万</span--></view>
+              </view>
+            </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="recommandHouse">
+      <view class="gtitle flex flex-main-justify wrapper"><view class="gtitle-text">优选房源</view><view data-url="/pages/xinfang/list" bindtap="link" class="gtitle-link">查看更多</view></view>
+      <view class="rhouse2-list rhouse2-onelist">
+        <scroll-view scroll-x="true">
+          <view class="rhouse2" wx:for="{{recomYou}}" wx:key="id">
+            <navigator url="/pages/xinfang/detail?id={{item.id}}" hover-class="none">
+            <view class="rhouse2-pic">
+              <view class="rhouse-tag" wx:if="{{item.sort}}">{{item.sort}}</view>
+              <image src="{{item.image}}" class="blockImg"/>
+            </view>
+            <view class="rhouse2-info">
+              <view class="rhouse2-title">{{item.title}}</view>
+              <view class="rhouse2-sub flex flex-main-justify">
+                <view class="rhouse2-label">{{item.words}}</view>
+                <view class="rhouse2-money">{{item.price}}<!--span class="rhouse2-unit">万</span--></view>
+              </view>
+            </view>
+            </navigator>
+          </view>
+          <!--view class="rhouse2">
+            <view class="rhouse2-pic">
+              <view class="rhouse-tag">置顶房源</view>
+              <image src="../../images/322x210.png" class="blockImg"/>
+            </view>
+            <view class="rhouse2-info">
+              <view class="rhouse2-title">途家斯维度假公寓</view>
+              <view class="rhouse2-sub flex flex-main-justify">
+                <view class="rhouse2-label">佣金</view>
+                <view class="rhouse2-money">2.6-3.5<span class="rhouse2-unit">万</span></view>
+              </view>
+            </view>
+          </view>
+          <view class="rhouse2">
+            <view class="rhouse2-pic">
+              <view class="rhouse-tag">置顶房源</view>
+              <image src="../../images/322x210.png" class="blockImg"/>
+            </view>
+            <view class="rhouse2-info">
+              <view class="rhouse2-title">途家斯维度假公寓</view>
+              <view class="rhouse2-sub flex flex-main-justify">
+                <view class="rhouse2-label">佣金</view>
+                <view class="rhouse2-money">2.6-3.5<span class="rhouse2-unit">万</span></view>
+              </view>
+            </view>
+          </view>
+          <view class="rhouse2">
+            <view class="rhouse2-pic">
+              <image src="../../images/322x210.png" class="blockImg"/>
+            </view>
+            <view class="rhouse2-info">
+              <view class="rhouse2-title">途家斯维度假公寓</view>
+              <view class="rhouse2-sub flex flex-main-justify">
+                <view class="rhouse2-label">佣金</view>
+                <view class="rhouse2-money">2.6-3.5<span class="rhouse2-unit">万</span></view>
+              </view>
+            </view>
+          </view-->
+        </scroll-view>
+      </view>
+    </view>
+    <view class="blank10"></view>
+    <copyright></copyright>
+  </view>
+<!--/wux-refresher-->

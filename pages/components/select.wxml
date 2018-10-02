@@ -1,0 +1,2 @@
+<view class="my-select {{current == index ? 'ison' : ''}}" wx:for="{{data}}" bindtap="select" data-index="{{index}}">{{item.name}}</view>
+<input type="text" class="dn" name="{{name}}"/>

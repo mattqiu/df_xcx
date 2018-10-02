@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,SAAS;EACP,QAAQ,EAAC,KAAK;EACd,IAAI,EAAC,CAAC;EACN,KAAK,EAAC,CAAC;EACP,MAAM,EAAC,CAAC;EACR,GAAG,EAAC,MAAM;EACV,OAAO,EAAC,CAAC;EACT,UAAU,EAAC,kBAAe",
+"sources": ["list.scss"],
+"names": [],
+"file": "list.wxss"
+}

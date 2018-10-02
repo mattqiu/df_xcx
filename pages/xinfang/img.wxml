@@ -1,0 +1,13 @@
+<view class="xfImg">
+  <view class="xfImgSlide">
+    <image src="../../images/750x550.jpg" alt="" mode="widthFix"/>
+  </view>
+  <view class="xfImg-tabs">
+    <scroll-view scroll-x="true">
+      <view class="xfImg-tab">周边配套(18)</view>
+      <view class="xfImg-tab ison">楼盘(21)</view>
+      <view class="xfImg-tab">户型(8)</view>
+      <view class="xfImg-tab">户型(8)</view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="footer-placeholder">
+  <view class="footer flex flex-box-mean">
+    <navigator class="footer-item flex-item i1 {{route === 'pages/index/index' ? 'ison' : ''}}" open-type="redirect" url="/pages/index/index">
+      <span>首页</span>
+    </navigator>
+    <navigator class="footer-item flex-item i2 {{route === 'pages/xinfang/list' ? 'ison' : ''}}" open-type="redirect" url="/pages/xinfang/list">
+      <span>新房</span>
+    </navigator>
+    <navigator class="footer-item flex-item i3 {{route === 'pages/my/index' ? 'ison' : ''}}" open-type="redirect" url="/pages/my/index">
+      <span>我的</span>
+    </navigator>
+  </view>
+</view>

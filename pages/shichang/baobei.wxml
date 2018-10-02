@@ -1,0 +1,92 @@
+<view class="myBaobei">
+  <view class="search">
+    <view class="search-input">
+      <input type="text" placeholder="请输入客户姓名、手机号"/>
+    </view>
+  </view>
+  <view class="myBaobei-tabs">
+    <scroll-view scroll-x="true">
+      <view class="myBaobei-tab ison">所有客户(2)</view>
+      <view class="myBaobei-tab">已报备(4)</view>
+      <view class="myBaobei-tab">已到访(3)</view>
+      <view class="myBaobei-tab">已结佣(0)</view>
+    </scroll-view>
+  </view>
+  <view class="myBaobei-list">
+    <view class="myBaobeiItem">
+      <view class="myBaobeiItem-i1 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">邓梦华</view>
+          <view>15972671883</view>
+        </view>
+        <view class="myBaobeiItem-sao"></view>
+      </view>
+      <view class="myBaobeiItem-i2 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">曹亦奇</view>
+          <view>15327527197</view>
+        </view>
+        <view>06-02 18:25</view>
+      </view>
+      <view class="myBaobeiItem-i2">上海天玄事业房产经纪人</view>
+    </view>
+    <view class="myBaobeiItem">
+      <view class="myBaobeiItem-i1 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">邓梦华</view>
+          <view>15972671883</view>
+        </view>
+        <view class="myBaobeiItem-sao"></view>
+      </view>
+      <view class="myBaobeiItem-i2 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">曹亦奇</view>
+          <view>15327527197</view>
+        </view>
+        <view>06-02 18:25</view>
+      </view>
+      <view class="myBaobeiItem-i2">上海天玄事业房产经纪人</view>
+    </view>
+
+    <view class="myBaobeiItem">
+      <view class="myBaobeiItem-i1 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">邓梦华</view>
+          <view>15972671883</view>
+        </view>
+        <view class="myBaobeiItem-sao"></view>
+      </view>
+      <view class="myBaobeiItem-i2 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">曹亦奇</view>
+          <view>15327527197</view>
+        </view>
+        <view>06-02 18:25</view>
+      </view>
+      <view class="myBaobeiItem-i2">上海天玄事业房产经纪人</view>
+    </view>
+
+    <view class="myBaobeiItem">
+      <view class="myBaobeiItem-i1 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">邓梦华</view>
+          <view>15972671883</view>
+        </view>
+        <view class="myBaobeiItem-sao"></view>
+      </view>
+      <view class="myBaobeiItem-i2 flex flex-main-justify">
+        <view class="flex">
+          <view class="myBaobeiItem-name">曹亦奇</view>
+          <view>15327527197</view>
+        </view>
+        <view>06-02 18:25</view>
+      </view>
+      <view class="myBaobeiItem-i2">上海天玄事业房产经纪人</view>
+    </view>
+
+  </view>
+  <view class="common-fixbtnplaceholder"></view>
+  <view class="common-fixbtnWrap">
+    <view class="common-fixbtn">添加客户</view>
+  </view>
+</view>

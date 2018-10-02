@@ -1,0 +1,163 @@
+.bb .input-placeholder {
+  color: #999; }
+.bb-ele {
+  height: 110rpx;
+  line-height: 110rpx;
+  margin: 0 40rpx; }
+  .bb-ele.bt {
+    border-top: 1rpx solid #eee; }
+.bb-ele1 {
+  border-bottom: 1rpx solid #E4E4E4; }
+.bb-userava {
+  width: 70rpx;
+  height: 70rpx; }
+  .bb-userava.s0 {
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/120x120.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-right: 30rpx; }
+  .bb-userava.s1 {
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/120x120x.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-right: 30rpx; }
+  .bb-userava.s2 {
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/tel50x50.png) center center no-repeat;
+    background-size: 50rpx 50rpx; }
+.bb-addmore {
+  height: 110rpx;
+  line-height: 110rpx;
+  border: 1rpx solid #eee;
+  border-left: 0;
+  border-right: 0;
+  font-size: 32rpx;
+  color: #12213E;
+  background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/addmore44x44.png) left center no-repeat;
+  background-size: 44rpx 44rpx;
+  padding-left: 58rpx;
+  margin: 0 40rpx; }
+.bb .phone-q {
+  color: #3778FF;
+  font-size: 30rpx;
+  margin-right: 16rpx; }
+  .bb .phone-q:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-top: 10rpx solid #3778FF;
+    border-left: 7rpx solid transparent;
+    border-right: 7rpx solid transparent;
+    border-bottom: 10rpx solid transparent;
+    vertical-align: top;
+    position: relative;
+    top: 52rpx;
+    margin-left: 6rpx; }
+.bb-rule {
+  font-size: 24rpx;
+  color: #9097A3;
+  margin: 0 40rpx; }
+  .bb-rule view {
+    display: block;
+    line-height: 82rpx;
+    height: 82rpx; }
+  .bb-rule radio {
+    transform: scale(0.7); }
+.bb-user .bb-label {
+  font-size: 34rpx;
+  width: auto;
+  color: #12213E; }
+.bb-user .bb-option {
+  font-size: 28rpx;
+  color: #9097A3;
+  border-bottom: 0; }
+.bb-mainele {
+  margin: 0 40rpx;
+  background: #f6f6f6;
+  border-radius: 8rpx;
+  overflow: hidden; }
+  .bb-mainele .bb-ele {
+    margin: 0 20rpx; }
+.bb-option {
+  border-bottom: 1rpx solid #eee; }
+  .bb-option.noborder {
+    border-bottom: 0; }
+  .bb-option.hasarrow1:after {
+    margin-left: 20rpx;
+    content: '';
+    display: inline-block;
+    width: 12rpx;
+    height: 22rpx;
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/my-arrow.png) 0 0 no-repeat;
+    background-size: 100% 100%; }
+  .bb-option.hasarrow {
+    position: relative; }
+    .bb-option.hasarrow:after {
+      right: 0;
+      top: 50%;
+      margin-top: -11rpx;
+      position: absolute;
+      content: '';
+      width: 12rpx;
+      height: 22rpx;
+      background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/my-arrow.png) 0 0 no-repeat;
+      background-size: 100% 100%; }
+.bb-note {
+  margin: 0 40rpx;
+  border: 1rpx solid #eee;
+  border-left: 0;
+  border-right: 0; }
+  .bb-note .bb-label {
+    margin-top: 39rpx;
+    margin-bottom: 40rpx;
+    line-height: 1; }
+  .bb-note textarea {
+    height: 127rpx;
+    font-size: 32rpx; }
+.bb-label {
+  font-size: 32rpx;
+  width: 190rpx; }
+.bb-b1 input {
+  font-size: 32rpx;
+  height: 110rpx; }
+.bb-switch {
+  width: 180rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #3778FF;
+  border-radius: 8rpx;
+  overflow: hidden; }
+.bb-switchEle {
+  width: 50%;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  background: #FFF;
+  color: #3778FF;
+  font-size: 24rpx; }
+  .bb-switchEle.ison {
+    background: #3778FF;
+    color: #FFF; }
+.bb-plotadd {
+  padding: 0 40rpx;
+  margin-top: 60rpx; }
+.bb-plotaddTitle {
+  font-size: 34rpx;
+  line-height: 1;
+  color: #12213E; }
+.bb-plotaddSelect {
+  font-size: 28rpx;
+  color: #9097A3; }
+  .bb-plotaddSelect:after {
+    margin-left: 20rpx;
+    content: '';
+    display: inline-block;
+    width: 12rpx;
+    height: 22rpx;
+    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/my-arrow.png) 0 0 no-repeat;
+    background-size: 100% 100%; }
+
+.tui-picker-detail {
+  font-size: 32rpx; }
+  .tui-picker-detail.placeholder {
+    color: #999; }
+
+/*# sourceMappingURL=index.wxss.map */

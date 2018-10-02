@@ -1,0 +1,33 @@
+@import '../../arg.scss';
+.dongtaiItem{
+  &:first-child{
+    padding-top:30rpx;
+  }
+  padding:40rpx 0;
+  margin:0 40rpx;
+  border-bottom:1px solid #eee;
+  &-user{
+    margin-right:24rpx;
+    width:84rpx;
+    height:84rpx;
+    border-radius:100%;
+    overflow:hidden;
+  }
+  &-name{
+    font-size:32rpx;
+    line-height:1;
+    margin-top:4rpx;
+    margin-bottom:16rpx;
+  }
+  &-content{
+    font-size:30rpx;
+    line-height:50rpx;
+    color:$c1;
+    margin-top:34rpx;
+  }
+  &-time{
+    font-size:28rpx;
+    color:#9097A3;
+    line-height:1;
+  }
+}

@@ -1,0 +1,15 @@
+    "pages/index/index", //首页
+    "pages/index/city", //选择城市
+    "pages/baobei/order", //报备详情 ?id
+    "pages/baobei/daikan", //带看跟进 ?id
+    "pages/baobei/genjin", //添加跟进 ?id
+    "pages/baobei/index", //报备客户操作 ?hid
+    "pages/xinfang/dongtai", //新房动态 ?hid
+    "pages/xinfang/select", //选择楼盘
+    "pages/xinfang/detail", //楼盘详情 ?id
+    "pages/xinfang/list", //楼盘列表 ?kw&area&street&area&...
+    "pages/login/reg", //登陆
+    "pages/my/index", //我的
+    "pages/my/manage", //我的客户
+    "pages/my/baobei", //我的报备
+    "pages/my/fav", //我的收藏

@@ -1,0 +1,32 @@
+<view class="daikan" wx:if="{{id}}">
+  <view class="daikanInfo">
+    <view class="daikanInfo-ele flex">
+      <view class="daikanInfo-label flex-box0">带看编号</view>
+      <view class="daikanInfo-text">{{code}}</view>
+    </view>
+    <view class="daikanInfo-ele flex">
+      <view class="daikanInfo-label flex-box0">报备时间</view>
+      <view class="daikanInfo-text">{{time}}</view>
+    </view>
+    <view class="daikanInfo-ele flex">
+      <view class="daikanInfo-label flex-box0">楼<span class="em2"></span>盘</view>
+      <view class="daikanInfo-text">{{plot}}</view>
+    </view>
+    <view class="daikanInfo-ele flex">
+      <view class="daikanInfo-label flex-box0">客<span class="em2"></span>户</view>
+      <view class="daikanInfo-text">{{name}} {{phone}}<span class="daikanInfo-link" bindtap="hidePhone" wx:if="{{!phone_hide}}">隐藏号码</span></view>
+    </view>
+    <view class="daikanInfo-ele flex">
+      <view class="daikanInfo-label flex-box0">申请状态</view>
+      <view class="daikanInfo-text"><view class="daikanInfo-status">{{status}}</view></view>
+    </view>
+  </view>
+  <view class="daikan-tip">提示：带看申请单24小时内有效，请及时带看哦</view>
+  <view class="daikan-ercode">
+    <view class="daikan-ercodeImg">
+      <image src="{{image}}" class="blockImg"/>
+    </view>
+    <view class="daikan-ercodeText"><view>带客户到达后</view>出示二维码给客户经理扫描确认</view>
+  </view>
+
+</view>

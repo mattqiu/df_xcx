@@ -1,0 +1,24 @@
+page{
+  background:#000;
+}
+.xfImg{
+  &-tabs{
+    white-space:nowrap;
+    position:fixed;
+    bottom:40rpx;
+    left:0;
+    right:0;
+  }
+  &-tab{
+    &.ison{
+      background:linear-gradient(90deg,rgba(115,161,255,1),rgba(40,107,245,1));
+    }
+    border-radius:8rpx;
+    padding:18rpx 38rpx;
+    color:#fff;
+    font-size:30rpx;
+    line-height:1;
+    display:inline-block;
+    margin:0 10rpx;
+  }
+}

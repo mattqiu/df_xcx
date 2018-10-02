@@ -1,0 +1,28 @@
+.dongtaiItem {
+  padding: 40rpx 0;
+  margin: 0 40rpx;
+  border-bottom: 1px solid #eee; }
+  .dongtaiItem:first-child {
+    padding-top: 30rpx; }
+  .dongtaiItem-user {
+    margin-right: 24rpx;
+    width: 84rpx;
+    height: 84rpx;
+    border-radius: 100%;
+    overflow: hidden; }
+  .dongtaiItem-name {
+    font-size: 32rpx;
+    line-height: 1;
+    margin-top: 4rpx;
+    margin-bottom: 16rpx; }
+  .dongtaiItem-content {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    color: #12213E;
+    margin-top: 34rpx; }
+  .dongtaiItem-time {
+    font-size: 28rpx;
+    color: #9097A3;
+    line-height: 1; }
+
+/*# sourceMappingURL=dongtai.wxss.map */

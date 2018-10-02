@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText" : "申请带看",
+    "usingComponents" : {
+        "upload" : "../components/upload"
+    }
+}

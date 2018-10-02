@@ -1,0 +1,20 @@
+1. 获取openid 根据is_true判断
+/api/index/getOpenidAn?code=xx
+
+2. 个人中心 user_type 案场传1 市场传2
+/api/user/index?uid=xx&user_type=xx
+返回参数和总代小程序一样
+
+3. 获取手机号 这个没有msg status和data 直接返回字符串
+/api/index/decodeAn  post
+参数
+accessKey
+encryptedData
+
+4. 绑定手机号和openid 第一次需要绑定
+/api/user/bindOpenid?openid=xx&phone=xx
+返回uid
+
+5. 手机号登录 
+/api/user/checkPwd?phone=xx&pwd=xx
+返回uid

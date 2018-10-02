@@ -1,0 +1,14 @@
+<view class="{{show ? '' : 'dn'}}">
+<view class="jubao-backdrop"></view>
+<view class="dialog jubao">
+  <view class="jubao-close" bindtap="hide"></view>
+  <view class="jubao-title">请选择举报事由</view>
+  <view class="jubao-bd">
+    <view class="jubao-item {{reasonId == index ? 'ison' : ''}}" data-index="{{index}}" bindtap="setReason" wx:for="{{reasons}}">{{item}}</view>
+    <view class="jubao-textarea" wx:if="{{reasonId == reasons.length - 1}}">
+      <textarea bindinput="onInputReason" cols="30" rows="10" placeholder="请填写举报内容" value="{{value}}"></textarea>
+    </view>
+  </view>
+  <view class="jubao-ft" bindtap="tijiao">提交</view>
+</view>
+</view>
