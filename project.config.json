@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
-	"appid": "wx94e32a9840b3d712",
-	"projectname": "xcjt",
+	"libVersion": "2.3.0",
+	"appid": "wxd8f6a2dbe6df67fb",
+	"projectname": "%E9%92%89%E6%88%BF",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

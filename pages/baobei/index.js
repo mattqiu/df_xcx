@@ -81,7 +81,7 @@ Page({
     if(id) {
       this.Api.getNeedIdById({hid:id}).then(obj=>{
         this.setData({
-          needid : !!obj,
+          needid : obj=="1"?true:false,
         });
       });
     }
@@ -104,6 +104,9 @@ Page({
         'name': {
             required: true,
         },
+        'id_no': {
+          required: true
+        },
         //'visit_way': {
             //required: true
         //},
@@ -119,8 +122,11 @@ Page({
         'name': {
             required: '请填写姓名',
         },
+        'id_no': {
+            required: '请填写身份证号码',
+        },
         'visit_way': {
-            //required: '请填写来访方式',
+          //required: '请填写来访方式',
         },
         'visit_num': {
             //required: '请填写来访人数',
