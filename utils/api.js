@@ -266,6 +266,24 @@ class Api{
       return obj.data.data;
     })
   }
+  //添加楼盘信息
+  getPlotAllPhoneById(data){
+    var url = '/plot/getPlotAllPhoneById';
+    return this.request.getRequest(url,{
+      data : data
+    }).then(obj=>{
+      return obj.data.data;
+    })
+  }
+  //添加楼盘信息
+  getNeedIdById(data){
+    var url = '/plot/getNeedIdById';
+    return this.request.getRequest(url,{
+      data : data
+    }).then(obj=>{
+      return obj.data.data;
+    })
+  }
   //是否开启身份证接口
   getIsOpenSfz(data){
     var url = '/index/getIsOpenSfz';

@@ -37,7 +37,8 @@ Page({
     visit_num_array : app.Global._.range(1,11),
     hid : [],
     visit_ways_index : -1,
-    rule : false
+    rule : false,
+    needid : false
   },
   //区号修改
   changeQs : function(e) {
@@ -76,10 +77,28 @@ Page({
     this.Global.pubsub.on('my.manage',this.setPerson);
     this.Global.pubsub.on('xinfang.select',this.setPlot);
     var phoneType = app.globalData.phoneType;
-    this.setData({
-      phoneType : phoneType,
-      'form.phone_hide' : !phoneType
-    });
+
+    if(id) {
+      this.Api.getNeedIdById({hid:id}).then(obj=>{
+        this.setData({
+          needid : !!obj,
+        });
+      });
+    }
+    if(!phoneType && id){
+      this.Api.getPlotAllPhoneById({hid:id}).then(obj=>{
+        this.setData({
+          phoneType : obj,
+          'form.phone_hide' : !obj
+        });
+      });
+    }
+    else
+      // console.log(phoneType);
+      this.setData({
+        phoneType : phoneType,
+        'form.phone_hide' : !phoneType
+      });
     // 验证字段的规则
     const rules = {
         'name': {

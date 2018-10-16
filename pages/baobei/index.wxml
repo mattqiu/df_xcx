@@ -41,6 +41,12 @@
         <radio value="1" checked="{{rule}}" color="#3778FF" bindchange="onChangePhone"/>报备客户手机号码全号
       </view>
     </view>
+    <view class="bb-textarea bb-note" wx:if="{{needid}}">
+        <view class="bb-label">身份证号码</view>
+        <view class="bb-textareaBlock">
+          <textarea placeholder="请输入客户身份证号码" name="id_no"></textarea>
+        </view>
+      </view>
     <view class="bb-addmore" bindtap="showMore" wx:if="{{!isMore}}">添加更多</view>
     <view class="bb-addmoreBlock" wx:if="{{isMore}}">
       <view class="bb-ele flex bt">

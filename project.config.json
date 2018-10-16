@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.2",
-	"appid": "wxd8f6a2dbe6df67fb",
-	"projectname": "zongdai",
+	"appid": "wx94e32a9840b3d712",
+	"projectname": "xcjt",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 29,
 			"list": [
 				{
 					"id": -1,
@@ -205,6 +205,12 @@
 					"name": "我的关注",
 					"pathName": "pages/my/fav",
 					"query": ""
+				},
+				{
+					"id": 29,
+					"name": "添加报备",
+					"pathName": "pages/baobei/index",
+					"query": "id=2714"
 				}
 			]
 		}
