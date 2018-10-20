@@ -8,6 +8,7 @@ Page({
     startYear: new Date().getFullYear(),
     endYear: new Date().getFullYear() + 1,
     qs_index : 0,
+    id_no : null,
     qs : [{
       name : '+86(中国)',
       value : '+86'
@@ -77,14 +78,19 @@ Page({
     this.Global.pubsub.on('my.manage',this.setPerson);
     this.Global.pubsub.on('xinfang.select',this.setPlot);
     var phoneType = app.globalData.phoneType;
+    var needid = false;
 
     if(id) {
       this.Api.getNeedIdById({hid:id}).then(obj=>{
         this.setData({
           needid : obj=="1"?true:false,
         });
+        if(obj=="1") {
+          needid = true;
+        }
       });
     }
+    console.log(needid);
     if(!phoneType && id){
       this.Api.getPlotAllPhoneById({hid:id}).then(obj=>{
         this.setData({
@@ -99,14 +105,15 @@ Page({
         phoneType : phoneType,
         'form.phone_hide' : !phoneType
       });
+    
     // 验证字段的规则
     const rules = {
         'name': {
             required: true,
         },
-        'id_no': {
-          required: true
-        },
+        // 'id_no': {
+        //   required: true
+        // },
         //'visit_way': {
             //required: true
         //},
@@ -135,6 +142,7 @@ Page({
             required: '请填写手机号码',
         }
     }
+    console.log(this.data.needid);
     this.WxValidate = new WxValidate(rules,messages);
 
     this.setData({
@@ -159,6 +167,11 @@ Page({
     //}
     this.setData({
       'form.phone_hide' : checked
+    })
+  },
+  onInputId(e) {
+    this.setData({
+      'form.id_no': e.detail.value
     })
   },
   onInputPhone(e){
@@ -254,8 +267,14 @@ Page({
       //this.Global.showErrorMsg('请填写到访时间');
       //return;
     //}
+    console.log(this.data);
+    if (this.data.needid && !this.data.form.id_no) {
+      this.Global.showErrorMsg('请输入身份证号码');
+      return false
+    }
     if (!this.WxValidate.checkForm(e)) {
         const error = this.WxValidate.errorList[0];
+        // console.log(this.data.needid);
         this.Global.showErrorMsg(error.msg);
         return false
     }else{

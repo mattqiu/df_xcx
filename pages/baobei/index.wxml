@@ -44,7 +44,7 @@
     <view class="bb-textarea bb-note" wx:if="{{needid}}">
         <view class="bb-label">身份证号码</view>
         <view class="bb-textareaBlock">
-          <textarea placeholder="请输入客户身份证号码" checked="{{rule}}" name="id_no" maxlength="18"></textarea>
+          <textarea placeholder="请输入客户身份证后6位" checked="{{rule}}" name="id_no" maxlength="6" value="{{form.id_no}}" bindinput="onInputId" ></textarea>
         </view>
       </view>
     <view class="bb-addmore" bindtap="showMore" wx:if="{{!isMore}}">添加更多</view>
