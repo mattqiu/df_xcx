@@ -1,7 +1,15 @@
 const app = getApp();
 Page({
   data:{
-    cid : 0
+    cid : 0,
+    dayId: 0,
+    dayList: [
+      { name: '全部' },
+      { name: '今日' },
+      { name: '昨日' },
+      { name: '本周' },
+      { name: '本月' }
+    ]
   },
   onLoad: function(options){
     this.Global = app.Global;
@@ -21,7 +29,8 @@ Page({
       this.Api.subList({
         uid : obj.id,
         user_type : 0,
-        kw : this.data.kw || ''
+        kw : this.data.kw || '',
+        day: this.data.dayId
       }).then(obj=>{
         this.setData({
           list : obj
@@ -51,5 +60,12 @@ Page({
     this.setData({
       cid : cid
     });
-  }
+  },
+  changeDay: function (e) {
+    var dayId = e.currentTarget.dataset.index;
+    this.setData({
+      dayId: dayId
+    });
+    this.getData();
+  },
 })
