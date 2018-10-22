@@ -1,6 +1,6 @@
 <view class="xfList">
   <view class="listFixed">
-    <search placeholder="搜索项目名称" bindconfirm="onSearch" value="{{options.kw}}"></search>
+    <search placeholder="搜索楼盘名" bindconfirm="onSearch" value="{{options.kw}}"></search>
     <view class="xfList-tabs flex">
       <view class="xfList-tab flex-box1 {{index == 0 ? 'ison' : ''}}" bindtap="showFilter" data-index="0">{{tabs[0]['name']}}</view>
       <view class="xfList-tab flex-box1 {{index == 1 ? 'ison' : ''}}" bindtap="showFilter" data-index="1">{{tabs[1]['name']}}</view>

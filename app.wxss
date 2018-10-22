@@ -1312,7 +1312,7 @@ page {
     position: relative;
     width: 220rpx;
     height: 170rpx;
-    border-radius: 8rpx;
+    border-radius: 4rpx;
     overflow: hidden; }
   .relationItem-sort {
     width: 110rpx;
@@ -1360,7 +1360,7 @@ page {
   .relationItem-yj {
     margin-bottom: 16rpx;
     padding-left: 48rpx;
-    background: url(https://oss-sysweet-demo.huafangweiyuan.com/zongdai/images/label.png) left center no-repeat;
+    background: url(https://jjqxft.oss-cn-beijing.aliyuncs.com/subwap/img/yj.png) left center no-repeat;
     background-size: 38rpx 38rpx;
     line-height: 38rpx;
     font-size: 24rpx;
