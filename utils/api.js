@@ -332,5 +332,23 @@ class Api{
       return obj.data.data;
     })
   }
+  //获取标题
+  getTitle(data) {
+    var url = '/user/getMultiTitle';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data.data;
+    })
+  }
+  //快速报备提交
+  getSumit(data){
+    var url = '/user/multiSub';
+    return this.request.postRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data;
+    })
+  }
 }
 export default Api;
