@@ -16,6 +16,7 @@ Page({
     this.Api = this.Global.Api;
   },
   onShow : function() {
+    console.log(app.globalData.user);
     this.getData();
   },
   onClear : function() {

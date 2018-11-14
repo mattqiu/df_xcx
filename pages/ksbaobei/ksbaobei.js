@@ -2,6 +2,11 @@ const app = getApp();
 Page({
   data: {
   },
+  backhome: function () {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
   onLoad: function (options) {
     this.Global = app.Global;
     this.Api = this.Global.Api;
@@ -53,21 +58,33 @@ Page({
       this.Global.showErrorMsg(error.msg);
     } else {
       this.Global.getUser().then(obj => {
+        var app = getApp();
+        var user = app.globalData.wxUser;
+        var str1 = e.detail['value']['note'].replace(/\n/g,"tt");
         // console.log(e.detail);
         this.Api.getSumit({
-          uid: obj.id,
-          note: e.detail['value']['note']
+          uid: obj.id !== undefined?obj.id:'',
+          note: str1,
+          openid: user.openid,
         }).then(obj => {
-          this.Global.showErrorMsg(obj.msg);
+          if (obj.status == 'success') {
+            this.Global.wxLogin().then(obj1 => {
+            //   app.globalData.wxUser = obj1;
+              app.globalData.user = obj.data;
+              this.Global.showOkMsg(obj.msg).then(obj => {               
+                  wx.navigateTo({
+                    url: '/pages/my/baobei'
+                  })
+                });
+            });
+            // this.Global.showErrorMsg('请重新登录小程序');
+          } else {
+            this.Global.showErrorMsg(obj.msg);
+          }
+          
         });
       })
     }
   },
-  backhome: function () {
-    console.log(1)
-    // this.Global.WxService.redirectTo('/pages/index/index');
-    wx.navigateTo({
-      url: '/pages/index/index'
-    })
-  }
+  
 })
