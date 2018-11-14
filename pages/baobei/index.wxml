@@ -93,6 +93,12 @@
           <textarea placeholder="请输入客户备注" name="note"></textarea>
         </view>
       </view>
+      <view class="bb-textarea bb-note" wx:if="{{isHelpBaobei}}">
+        <view class="bb-label">分销手机号</view>
+        <view class="bb-textareaBlock">
+          <textarea placeholder="请输入分销手机号" name="fxphone" maxlength="11" ></textarea>
+        </view>
+      </view>
     </view>
   </view>
   <view class="bb-plotadd">

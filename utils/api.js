@@ -332,5 +332,14 @@ class Api{
       return obj.data.data;
     })
   }
+  //快速报备接口
+  isHelpBaobei(data) {
+    var url = '/index/isHelpBaobei';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data.data;
+    })
+  }
 }
 export default Api;

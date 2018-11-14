@@ -9,6 +9,7 @@ Page({
     endYear: new Date().getFullYear() + 1,
     qs_index : 0,
     id_no : null,
+    isHelpBaobei : false,
     qs : [{
       name : '+86(中国)',
       value : '+86'
@@ -78,8 +79,15 @@ Page({
     this.Global.pubsub.on('my.manage',this.setPerson);
     this.Global.pubsub.on('xinfang.select',this.setPlot);
     var phoneType = app.globalData.phoneType;
+    var phone = app.globalData.user.phone;
     var needid = false;
-
+    // console.log(app.globalData.phoneType);
+    this.Api.isHelpBaobei({ phone: phone }).then(obj => {
+      this.setData({
+        isHelpBaobei: obj,
+      });
+    });
+    
     if(id) {
       this.Api.getNeedIdById({hid:id}).then(obj=>{
         this.setData({
