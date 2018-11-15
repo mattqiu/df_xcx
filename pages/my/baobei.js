@@ -30,22 +30,6 @@ Page({
     });
     this.getData();
   },  
-  getData : function() {
-    
-    this.Global.getUser().then(obj=>{
-      this.Api.subList({
-        uid : obj.id,
-        user_type : 0,
-        kw : this.data.kw || '',
-        day: this.data.dayId
-      }).then(obj=>{
-        this.setData({
-          list: obj.groups,
-          list1:obj.list
-        })
-      })
-    })
-  },
   //带看
   goGenjin: function(e) {
     var item = e.currentTarget.dataset.item;
@@ -77,18 +61,31 @@ Page({
     });
     this.getData();
   },
-  getdata: function () {
+  getData: function () {
     this.Global.getUser().then(obj => {
       this.Api.subList({
         uid: obj.id,
         user_type: 0,
+        page: this.data.page,
         kw: this.data.kw || '',
-        cid: this.data.cid
+        day: this.data.dayId
       }).then(obj => {
-        this.setData({
+        var list = obj.list;
+        this.data.list = this.Global._.union(this.data.list1, list);
+        var params = {
+          list1: this.data.list,
+          page: obj.page + 1,
           list: obj.groups,
-          list1: obj.list
-        })
+        };
+        if (obj.page >= obj.page_count) {
+          params.isNeedLoadMore = 2;
+        }
+
+        this.setData(params);
+        // this.setData({
+        //   list: obj.groups,
+        //   list1:obj.list
+        // })
       })
     })
   },
@@ -97,7 +94,7 @@ Page({
   },
   loadmore: function () {
     if (this.data.isNeedLoadMore == 1) {
-      this.getdata(this.data.options);
+      this.getData(this.data.options);
     }
   },
 })

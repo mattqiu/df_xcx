@@ -112,6 +112,7 @@
       </view>
       <view class="myBaobeiItem-i2">上海天玄事业房产经纪人</view>
     </view-->
+    <load-more type="{{isNeedLoadMore}}"></load-more>
   </view>
   <!--view class="common-fixbtnplaceholder"></view>
   <view class="common-fixbtnWrap">
