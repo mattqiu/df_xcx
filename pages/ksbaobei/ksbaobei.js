@@ -33,16 +33,16 @@ Page({
   },
 
   onShareAppMessage: function() {
-    var img ='';
+    var obj ='';
     this.Api.getSharePic({
 
     }).then(obj => {
-    img = obj
+    obj = obj
     });
     return {
       title: '钉房快速报备系统',
       desc: '最具人气的小程序!',
-      path: img
+      path: obj
     }
   },
   copy: function() {
