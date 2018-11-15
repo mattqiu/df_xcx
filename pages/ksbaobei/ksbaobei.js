@@ -1,6 +1,7 @@
 const app = getApp();
 Page({
   data: {
+    pic: ''
   },
   backhome: function() {
     wx.switchTab({
@@ -30,20 +31,21 @@ Page({
       }
     }
     this.WxValidate = new WxValidate(rules, messages);
-  },
-
-  onShareAppMessage: function() {
-    var obj ='';
     this.Api.getSharePic({
 
     }).then(obj => {
-    obj = obj
+      this.setData({
+        pic: obj
+      })
     });
+  },
+
+  onShareAppMessage: function() {
     return {
       title: '钉房快速报备系统',
-      desc: '最具人气的小程序!',
-      path: obj
+      imageUrl: this.data.pic
     }
+    
   },
   copy: function() {
     wx.setClipboardData({
