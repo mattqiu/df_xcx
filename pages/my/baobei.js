@@ -4,7 +4,7 @@ Page({
     index: -1,
     isNeedLoadMore: 1,
     page: 1,
-    cid : 0,
+    cid : '',
     dayId: 0,
     dayList: [
       { name: '全部' },
@@ -49,9 +49,11 @@ Page({
   },
   changeCid : function(e) {
     var cid = e.currentTarget.dataset.index;
+    console.log(e.currentTarget.dataset.cid);
     this.setData({
       cid : cid,
       page: 1,
+      list1:''
     });
     this.getData();
   },
