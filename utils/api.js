@@ -350,5 +350,14 @@ class Api{
       return obj.data;
     })
   }
+  //分享页面图片
+  getSharePic(data) {
+    var url = '/user/getSharePic';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data.data;
+    })
+  }
 }
 export default Api;

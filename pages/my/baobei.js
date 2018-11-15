@@ -1,6 +1,9 @@
 const app = getApp();
 Page({
   data:{
+    index: -1,
+    isNeedLoadMore: 1,
+    page: 1,
     cid : 0,
     dayId: 0,
     dayList: [
@@ -9,7 +12,9 @@ Page({
       { name: '昨日' },
       { name: '本周' },
       { name: '本月' }
-    ]
+    ],
+    list:[],
+    list1:[]
   },
   onLoad: function(options){
     this.Global = app.Global;
@@ -24,8 +29,9 @@ Page({
       kw : ''
     });
     this.getData();
-  },
+  },  
   getData : function() {
+    
     this.Global.getUser().then(obj=>{
       this.Api.subList({
         uid : obj.id,
@@ -34,7 +40,8 @@ Page({
         day: this.data.dayId
       }).then(obj=>{
         this.setData({
-          list : obj
+          list: obj.groups,
+          list1:obj.list
         })
       })
     })
@@ -61,6 +68,7 @@ Page({
     this.setData({
       cid : cid
     });
+    this.getdata();
   },
   changeDay: function (e) {
     var dayId = e.currentTarget.dataset.index;
@@ -68,5 +76,28 @@ Page({
       dayId: dayId
     });
     this.getData();
+  },
+  getdata: function () {
+    this.Global.getUser().then(obj => {
+      this.Api.subList({
+        uid: obj.id,
+        user_type: 0,
+        kw: this.data.kw || '',
+        cid: this.data.cid
+      }).then(obj => {
+        this.setData({
+          list: obj.groups,
+          list1: obj.list
+        })
+      })
+    })
+  },
+  onReachBottom: function () {
+    this.loadmore();
+  },
+  loadmore: function () {
+    if (this.data.isNeedLoadMore == 1) {
+      this.getdata(this.data.options);
+    }
   },
 })
