@@ -58,7 +58,6 @@ Page({
     })
   },
   add: function(e) {
-    console.log(1);
     if (!this.WxValidate.checkForm(e)) {
       const error = this.WxValidate.errorList[0];
       this.Global.showErrorMsg(error.msg);

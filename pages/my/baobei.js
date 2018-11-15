@@ -50,9 +50,10 @@ Page({
   changeCid : function(e) {
     var cid = e.currentTarget.dataset.index;
     this.setData({
-      cid : cid
+      cid : cid,
+      page: 1,
     });
-    this.getdata();
+    this.getData();
   },
   changeDay: function (e) {
     var dayId = e.currentTarget.dataset.index;
@@ -62,22 +63,24 @@ Page({
     this.getData();
   },
   getData: function () {
+    console.log(this.data.page);
     this.Global.getUser().then(obj => {
       this.Api.subList({
         uid: obj.id,
         user_type: 0,
         page: this.data.page,
         kw: this.data.kw || '',
-        day: this.data.dayId
+        day: this.data.dayId,
+        cid: this.data.cid,
       }).then(obj => {
         var list = obj.list;
         this.data.list = this.Global._.union(this.data.list1, list);
         var params = {
           list1: this.data.list,
-          page: obj.page + 1,
+          page: this.data.page + 1,
           list: obj.groups,
         };
-        if (obj.page >= obj.page_count) {
+        if (this.data.page >= obj.page_count) {
           params.isNeedLoadMore = 2;
         }
 
