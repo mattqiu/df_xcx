@@ -359,5 +359,13 @@ class Api{
       return obj.data.data;
     })
   }
+  revisename(data) {
+    var url = '/user/editName';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data;
+    })
+  }
 }
 export default Api;

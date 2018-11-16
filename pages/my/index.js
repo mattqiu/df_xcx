@@ -91,5 +91,20 @@ Page({
   },
   onShow : function() {
     this.init();
+  },
+  gorevise: function () {
+    wx.navigateTo({
+      url: '../revisename/revisename',
+    })
+  },
+  gopassword: function () {
+    wx.navigateTo({
+      url: '../password/password',
+    })
+  },
+  goxm: function () {
+    wx.navigateTo({
+      url: '../xiangmuku/xiangmuku',
+    })
   }
 })
