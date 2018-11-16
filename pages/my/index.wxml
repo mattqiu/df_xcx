@@ -25,8 +25,7 @@
   <view class="my-menu">
     <!--view class="my-menuItem">我的订阅</view>
     <view class="my-menuItem">案场销售</view>
-    <view class="my-menuItem">案场助理</view>
-    <view class="my-menuItem">我的点评</view-->
+    <view class="my-menuItem">案场助理</view-->
     <view>
     <view class="my-menuItem" bindtap='gorevise'>修改姓名</view>
     <!-- <view class="my-menuItem" bindtap='gopassword'>修改密码</view> -->
