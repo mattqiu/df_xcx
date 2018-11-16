@@ -1,0 +1,44 @@
+<view class='top'>
+  <view class="search">
+    <view class="search-input">
+      <input type="text" placeholder="请输入搜索联系人姓名" bindconfirm="confirm" bindinput="onInput" confirm-type="search" value="{{value}}" />
+    </view>
+  </view>
+
+
+  <view class='red'>
+    <text class='text1'>以下渠道公司【龙湖滟澜山】项目可以重新开</text>
+  </view>
+</view>
+<view class='content'>
+  <view class='c-left'></view>
+  <view class='c-right'>
+    <view class='c-text1'>上海贺诺网络科技有限公司</view>
+    <view class='c-text2'>父级公司名，如无父级显示暂无</view>
+    <view class='c-text3'>门店码：601221</view>
+  </view>
+</view>
+<view class='content'>
+  <view class='c-left'></view>
+  <view class='c-right'>
+    <view class='c-text1'>上海贺诺网络科技有限公司</view>
+    <view class='c-text2'>父级公司名，如无父级显示暂无</view>
+    <view class='c-text3'>门店码：601221</view>
+  </view>
+</view>
+<view class='content'>
+  <view class='c-left'></view>
+  <view class='c-right'>
+    <view class='c-text1'>上海贺诺网络科技有限公司</view>
+    <view class='c-text2'>父级公司名，如无父级显示暂无</view>
+    <view class='c-text3'>门店码：601221</view>
+  </view>
+</view>
+<view class='content'>
+  <view class='c-left'></view>
+  <view class='c-right'>
+    <view class='c-text1'>上海贺诺网络科技有限公司</view>
+    <view class='c-text2'>父级公司名，如无父级显示暂无</view>
+    <view class='c-text3'>门店码：601221</view>
+  </view>
+</view>

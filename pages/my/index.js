@@ -91,5 +91,10 @@ Page({
   },
   onShow : function() {
     this.init();
+  },
+  gorevise: function () {
+    wx.navigateTo({
+      url: '../revisename/revisename',
+    })
   }
 })

@@ -25,8 +25,8 @@
   <view class="my-menu">
     <!--view class="my-menuItem">我的订阅</view>
     <view class="my-menuItem">案场销售</view>
-    <view class="my-menuItem">案场助理</view>
-    <view class="my-menuItem">我的点评</view-->
+    <view class="my-menuItem">案场助理</view-->
+    <view class="my-menuItem" bindtap='gorevise'>修改姓名</view>
     <view>
       <view class="my-menuItem flex flex-main-justify" wx:if="{{user.type == 2 && _user.is_true == 1}}" bindtap="changeCompany"><view class="flex-box0">更换公司</view><view class="my-menuSub">{{user.company}}</view></view>
       <view class="my-menuItem flex flex-main-justify" bindtap="joinCompany" wx:if="{{user.type == 3 || _user.is_true == 0}}"><view class="flex-box0">加入公司</view><view class="my-menuSub"></view></view>
