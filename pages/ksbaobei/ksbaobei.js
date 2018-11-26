@@ -1,7 +1,8 @@
 const app = getApp();
 Page({
   data: {
-    pic: ''
+    pic: '',
+    title: ''
   },
   backhome: function() {
     wx.switchTab({
@@ -14,6 +15,9 @@ Page({
     this.Api.getTitle({
       type: 1
     }).then(obj => {
+      this.setData({
+        title: obj
+      })
       // console.log(obj)
       wx.setNavigationBarTitle({
         title: obj
@@ -42,7 +46,7 @@ Page({
 
   onShareAppMessage: function() {
     return {
-      title: '钉房快速报备系统',
+      title: this.data.title,
       imageUrl: this.data.pic
     }
     

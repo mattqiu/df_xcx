@@ -82,7 +82,7 @@
     </view>
   </view>
   <view class="bbOrder-tabs flex flex-main-justify">
-    <view class="bbOrder-tab {{tab == 0 ? 'ison' : ''}}" bindtap="changeTab" data-index="0">报备记录</view>
+    <view class="bbOrder-tab {{tab == 0 ? 'ison' : ''}}" bindtap="changeTab" data-index="0">订单流水</view>
     <view class="bbOrder-tab {{tab == 1 ? 'ison' : ''}}" bindtap="changeTab" data-index="1">资料照片</view>
   </view>
   <view class="bbOrder-history" wx:if="{{tab == 0}}">

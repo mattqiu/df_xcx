@@ -1,7 +1,8 @@
 const app = getApp();
 Page({
   data:{
-    tab : 0
+    tab : 0,
+    pros: null
   },
   onLoad: function(options){
     this.Global = app.Global;
@@ -9,6 +10,23 @@ Page({
     this.init();
     this.Global.pubsub.on('genjin',()=>{
       this.init();
+    })
+  },
+  onShow: function () {
+    this.setData({
+      pros: '',
+      // imgs: '',
+      // imgpros: '',
+    });
+    var id = this.options.id;
+    this.Api.subpros({ sid: id }).then(obj => {
+      this.Global._.each(obj.pros, (v, k) => {
+        console.log(v);
+        this.Global.wxParse.wxParse('_note[' + k + ']', 'html', v.note, this, 15);
+      });
+      console.log(obj)
+      this.setData(obj);
+
     })
   },
   changeTab : function(e) {

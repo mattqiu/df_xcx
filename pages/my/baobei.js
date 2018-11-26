@@ -17,11 +17,19 @@ Page({
     list1:[]
   },
   onLoad: function(options){
+    
+  },
+  onShow : function() {
+    this.setData({
+      kw: '',
+      list1: '',
+      page: 1,
+      cid: '',
+      dayId: '',
+    });
     this.Global = app.Global;
     this.Api = this.Global.Api;
     this.getData();
-  },
-  onShow : function() {
   },
   onClear : function() {
     this.setData({
@@ -42,7 +50,9 @@ Page({
   onSearch : function(e) {
     var kw = e.detail;
     this.setData({
-      kw : kw
+      kw : kw,
+      list1: '',
+      page: 1,
     });
     this.getData();
   },

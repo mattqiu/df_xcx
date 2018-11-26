@@ -12,6 +12,9 @@ Page({
     });
   },
   onLoad: function(options){
+    
+  },
+  onShow: function(){
     this.Global = app.Global;
     this.Api = this.Global.Api;
     this.init();
