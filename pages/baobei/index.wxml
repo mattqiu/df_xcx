@@ -29,7 +29,9 @@
         </view>
         <view class="bb-option flex flex-main-justify flex-box1 noborder">
           <!--view class="bb-b1 flex"><input type="text" value="130" style="width:3em" class="flex-box0"/><span>****</span><input type="text" value="3201" /></view-->
-        <view class="bb-b1 flex"><picker mode="selector" range-key="name" range="{{qs}}" bindchange="changeQs"><view class="phone-q">{{qs[qs_index]['value']}}</view></picker><input type="text" placeholder="请输入客户手机号码" value="{{form.phone}}" name="phone" bindinput="onInputPhone" maxlength="11"/></view>
+        <view class="bb-b1 flex">
+        <!-- <picker mode="selector" range-key="name" range="{{qs}}" bindchange="changeQs"><view class="phone-q">{{qs[qs_index]['value']}}</view></picker> -->
+        <input type="text" placeholder="请输入客户手机号码" value="{{form.phone}}" name="phone" bindinput="onInputPhone" maxlength="11"/></view>
           <!--view class="bb-b2">
             <switch color="#3778FF" bindchange="onChangePhone" checked="{{form.phone_hide}}"></switch>
           </view-->

@@ -3,7 +3,7 @@
     <view class="indexBanner">
       <swiper class="indexBanner-imgs" bindchange="onSwiperChange" circular="true" interval="6e3" autoplay="true">
           <swiper-item class="indexBanner-img" wx:for="{{indexImgs}}" wx:key="index">
-            <image src="{{item}}" class="blockImg" />
+            <image bindtap='linkDetail' data-url='{{indexIds[index]}}' src="{{item}}" class="blockImg" />
           </swiper-item>
       </swiper>
       <view class="indexBanner-dots flex flex-main-center" wx:if="{{indexImgs.length > 1}}" wx:key="index">

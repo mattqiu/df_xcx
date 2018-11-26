@@ -29,7 +29,9 @@
     "pages/anchang/genjin",
     "pages/anchang/list",
     "pages/anchang/bindcomp",
-    "pages/test/index"
+    "pages/test/index",
+    "pages/ksbaobei/ksbaobei",
+    "pages/revisename/revisename"
   ],
   "window":{
     "backgroundTextStyle":"light",

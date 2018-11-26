@@ -37,6 +37,13 @@ Page({
     var url = e.currentTarget.dataset.url;
     this.Global.link(url);
   },
+  linkDetail: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if(url!='0') {
+      this.Global.link('/pages/xinfang/detail?id='+url);
+    }
+    
+  },
   onLoad: function () {
     this.Global = app.Global;
     this.Api = this.Global.Api;

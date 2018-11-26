@@ -128,7 +128,7 @@ class Api{
   }
   //我的报备列表
   subList(data){
-    var url = '/user/subList';
+    var url = '/user/subListNew';
     return this.request.getRequest(url,{
       data : data
     }).then(obj=>{
@@ -332,9 +332,49 @@ class Api{
       return obj.data.data;
     })
   }
+<<<<<<< HEAD
   //快速报备接口
   isHelpBaobei(data) {
     var url = '/index/isHelpBaobei';
+=======
+  //获取标题
+  getTitle(data) {
+    var url = '/user/getMultiTitle';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data.data;
+    })
+  }
+  //快速报备提交
+  getSumit(data){
+    var url = '/user/multiSub';
+    return this.request.postRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data;
+    })
+  }
+  //分享页面图片
+  getSharePic(data) {
+    var url = '/user/getSharePic';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data.data;
+    })
+  }
+  revisename(data) {
+    var url = '/user/editName';
+    return this.request.getRequest(url, {
+      data: data
+    }).then(obj => {
+      return obj.data;
+    })
+  }
+  subpros(data) {
+    var url = '/user/getSubPros';
+>>>>>>> ceshi
     return this.request.getRequest(url, {
       data: data
     }).then(obj => {
